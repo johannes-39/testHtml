@@ -1,0 +1,144 @@
+:root {
+    --black: #222;
+    --white: #fff;
+}
+
+/* CSS Variablen */
+:root {
+    --primaryColor: #f15025;
+    --secondaryColor: #333;
+    --black: #222;
+    --white: #fff;
+    --offWhite: #ededed;
+    --transition: all 0.2s linear;
+}
+
+/* `*` ist ein universal selector der jedes html element auf der Seite selektiert.
+Mit ::before und ::after werden alle entsprechenden Pseudo-elmente selektiert  */
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    /* Bei border-box inkludieren die festgelegten Dimensionen (width, height)
+    bereits das padding, border und den content */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+/* Defaults deaktivieren */
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.header {
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.nav-links li a {
+    color: var(--primaryColor);
+    transition: var(--transition);
+    text-transform: uppercase;
+}
+
+.nav-links li a:hover {
+    color: var(--black);
+}
+
+.section {
+    padding: 5rem 2rem;
+    max-width: 1170px;
+    margin: 0 auto;
+    text-align: center;
+}
+.section-header {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.line {
+    width: 5rem;
+    height: 0.25rem;
+    background: var(--primaryColor);
+    margin: 0 auto;
+}
+
+.blog-post-grid {
+    display: grid;
+    gap: 2rem;
+}
+@media (min-width: 1024px) {
+    .blog-post-grid {
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+}
+
+.blog-post {
+    background: var(--offWhite);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    border-radius: 0.5rem;
+}
+.blog-post:hover {
+    background: var(--offWhite);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.blog-post-text {
+    padding: 1rem;
+    text-align: left;
+}
+.blog-post-text h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.blog-post-text p {
+    font-size: 0.875rem;
+}
+
+.blog-post img {
+    width: 100%;
+    display: block;
+    height: 15rem;
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.btn {
+    background: var(--primaryColor);
+    color: var(--white);
+    padding: 0.5rem 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: var(--spacing);
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+}
